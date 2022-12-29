@@ -145,7 +145,7 @@ async function run() {
     app.delete("/Reviews/:id", async (req, res) => {
       const id = req.params.id;
       const query = { _id: ObjectId(id) };
-      const result = await ReviewsCollection.deleteOne(query);
+      const result = await reviewsCollection.deleteOne(query);
       console.log("deleting Review with id ", result);
       res.json(result);
     })
